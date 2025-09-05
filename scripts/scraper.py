@@ -7,7 +7,7 @@ Quebec City grocery price scraper for personal use
 import json
 import time
 import requests
-from datetime import datetime
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import os
 import sys
@@ -274,7 +274,7 @@ def update_products_json():
                     }
                 },
                 'nextUpdate': (datetime.now().replace(hour=8, minute=0, second=0) + 
-                              datetime.timedelta(days=1)).isoformat() + 'Z'
+                              timedelta(days=1)).isoformat() + 'Z'
             }
         }
         
