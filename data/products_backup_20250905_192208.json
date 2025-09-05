@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-05T19:30:49.832744Z",
+  "lastUpdated": "2025-09-05T19:22:08.375613Z",
   "stores": [
     "metro",
     "superc",
@@ -15,8 +15,8 @@
       "prices": [
         {
           "store": "metro",
-          "price": 4.45,
-          "unitPrice": "2.23$/L",
+          "price": 4.78,
+          "unitPrice": "2.39$/L",
           "onSale": true,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
@@ -42,7 +42,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 4.45,
+            "metro": 4.78,
             "superc": 4.29,
             "iga": 4.59
           }
@@ -58,9 +58,9 @@
       "prices": [
         {
           "store": "metro",
-          "price": 2.9,
+          "price": 2.93,
           "unitPrice": "0.43$/100g",
-          "onSale": true,
+          "onSale": false,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
         }
@@ -69,7 +69,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 2.9
+            "metro": 2.93
           }
         }
       ],
@@ -83,8 +83,8 @@
       "prices": [
         {
           "store": "metro",
-          "price": 4.17,
-          "unitPrice": "3.07$/kg",
+          "price": 4.41,
+          "unitPrice": "3.24$/kg",
           "onSale": false,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
@@ -110,7 +110,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 4.17,
+            "metro": 4.41,
             "superc": 3.49,
             "iga": 4.19
           }
@@ -126,8 +126,8 @@
       "prices": [
         {
           "store": "metro",
-          "price": 3.87,
-          "unitPrice": "0.32$/unité",
+          "price": 4.45,
+          "unitPrice": "0.37$/unité",
           "onSale": true,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
@@ -137,7 +137,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 3.87
+            "metro": 4.45
           }
         }
       ],
@@ -151,9 +151,9 @@
       "prices": [
         {
           "store": "metro",
-          "price": 5.26,
-          "unitPrice": "5.26$/unité",
-          "onSale": true,
+          "price": 4.93,
+          "unitPrice": "4.93$/unité",
+          "onSale": false,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
         }
@@ -162,7 +162,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 5.26
+            "metro": 4.93
           }
         }
       ],
@@ -176,8 +176,8 @@
       "prices": [
         {
           "store": "metro",
-          "price": 13.97,
-          "unitPrice": "13.97$/unité",
+          "price": 15.76,
+          "unitPrice": "15.76$/unité",
           "onSale": false,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
@@ -187,7 +187,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 13.97
+            "metro": 15.76
           }
         }
       ],
@@ -201,9 +201,9 @@
       "prices": [
         {
           "store": "metro",
-          "price": 7.91,
-          "unitPrice": "7.91$/unité",
-          "onSale": false,
+          "price": 6.43,
+          "unitPrice": "6.43$/unité",
+          "onSale": true,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
         }
@@ -212,7 +212,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 7.91
+            "metro": 6.43
           }
         }
       ],
@@ -226,8 +226,8 @@
       "prices": [
         {
           "store": "metro",
-          "price": 2.49,
-          "unitPrice": "2.49$/kg",
+          "price": 2.25,
+          "unitPrice": "2.25$/kg",
           "onSale": false,
           "originalPrice": null,
           "lastUpdated": "2025-09-05"
@@ -237,7 +237,7 @@
         {
           "date": "2025-09-05",
           "prices": {
-            "metro": 2.49
+            "metro": 2.25
           }
         }
       ],
@@ -318,22 +318,22 @@
   "metadata": {
     "scrapingStatus": {
       "metro": {
-        "lastAttempt": "2025-09-05T19:30:49.832747Z",
+        "lastAttempt": "2025-09-05T19:22:08.375620Z",
         "success": true,
         "productsFound": 8
       },
       "superc": {
-        "lastAttempt": "2025-09-05T19:30:49.832750Z",
+        "lastAttempt": "2025-09-05T19:22:08.375624Z",
         "success": true,
         "productsFound": 3
       },
       "iga": {
-        "lastAttempt": "2025-09-05T19:30:49.832752Z",
+        "lastAttempt": "2025-09-05T19:22:08.375629Z",
         "success": true,
         "productsFound": 3
       }
     },
-    "nextUpdate": "2025-09-06T08:00:00.832754Z"
+    "nextUpdate": "2025-09-06T08:00:00.375633Z"
   },
   "alerts": {
     "enabled": true,
@@ -344,11 +344,11 @@
     },
     "notifications": [
       {
-        "id": "alert-1757115049-best-pain-wonder-blanc-675g",
+        "id": "alert-1757114528-best-pain-wonder-blanc-675g",
         "productId": "pain-wonder-blanc-675g",
         "type": "best_time_to_buy",
         "message": "C'est le moment d'acheter Pain Wonder Blanc 675g - près du meilleur prix historique!",
-        "timestamp": "2025-09-05T19:30:49.832721Z",
+        "timestamp": "2025-09-05T19:22:08.375590Z",
         "read": false,
         "data": {
           "currentPrice": 2.79,

@@ -2,7 +2,12 @@
 <html lang="fr-CA">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="PriceCompare">
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="apple-touch-icon" sizes="180x180" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='%233498db'/><text x='90' y='100' font-size='60' fill='white' text-anchor='middle' font-family='Arial'>PC</text></svg>">
     <title>PriceCompare - Comparateur de Prix Épiceries Québec</title>
     <meta name="description" content="Comparez les prix des épiceries à Québec - IGA, Metro, Super C">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -17,7 +22,19 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 10px;
+            margin: 0;
+            /* Quebec mobile data optimization */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            touch-action: manipulation;
+        }
+        
+        /* Mobile-first responsive padding */
+        @media (min-width: 768px) {
+            body {
+                padding: 20px;
+            }
         }
         
         .container {
@@ -66,11 +83,25 @@
         
         .search-box input {
             width: 100%;
-            padding: 15px;
+            padding: 18px;
             border: 2px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
+            border-radius: 12px;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
+            /* Mobile Quebec optimizations */
+            min-height: 48px;
+            -webkit-appearance: none;
+            appearance: none;
+            background-color: #fff;
+            touch-action: manipulation;
+        }
+        
+        /* French keyboard support */
+        .search-box input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.15);
+            transform: none; /* Prevent zoom on iOS */
         }
         
         .search-box input:focus {
@@ -83,14 +114,21 @@
             background: #27ae60;
             color: white;
             border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            font-size: 1rem;
+            padding: 18px 36px;
+            border-radius: 12px;
+            font-size: 1.1rem;
             cursor: pointer;
             transition: all 0.3s ease;
             display: flex;
             align-items: center;
+            justify-content: center;
             gap: 10px;
+            /* Quebec mobile touch optimization */
+            min-height: 48px;
+            min-width: 120px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            user-select: none;
         }
         
         .refresh-btn:hover {
@@ -107,11 +145,18 @@
         .store-checkbox {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             cursor: pointer;
-            padding: 10px 15px;
-            border-radius: 8px;
-            transition: background 0.3s ease;
+            padding: 15px 20px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            /* Mobile Quebec touch targets */
+            min-height: 48px;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+            border: 1px solid transparent;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         
         .store-checkbox:hover {
@@ -119,9 +164,18 @@
         }
         
         .store-checkbox input[type="checkbox"] {
-            width: 18px;
-            height: 18px;
+            width: 22px;
+            height: 22px;
             accent-color: #3498db;
+            /* Enhanced mobile touch target */
+            cursor: pointer;
+            margin: 0;
+        }
+        
+        .store-checkbox:active {
+            transform: scale(0.98);
+            background: #e8f4fd;
+            border-color: #3498db;
         }
         
         .results {
@@ -251,6 +305,303 @@
             margin-left: 10px;
         }
         
+        .sale-badge {
+            background: #e74c3c;
+            color: white;
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            margin-left: 5px;
+        }
+        
+        .original-price {
+            font-size: 0.7rem;
+            color: #95a5a6;
+            text-decoration: line-through;
+            margin-top: 2px;
+        }
+        
+        .product-name-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .watch-btn {
+            background: none;
+            border: none;
+            color: #bdc3c7;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .watch-btn:hover {
+            color: #f39c12;
+            background: rgba(243, 156, 18, 0.1);
+        }
+        
+        .watch-btn.watched {
+            color: #f39c12;
+        }
+        
+        .price-trend {
+            font-size: 0.8rem;
+            margin-top: 5px;
+            padding: 3px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+        
+        .price-trend.up {
+            background: rgba(231, 76, 60, 0.1);
+            color: #e74c3c;
+        }
+        
+        .price-trend.down {
+            background: rgba(39, 174, 96, 0.1);
+            color: #27ae60;
+        }
+        
+        .price-alert {
+            font-size: 0.75rem;
+            color: #f39c12;
+            margin-top: 5px;
+            font-weight: 500;
+        }
+        
+        .price-history-mini {
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .price-history-mini canvas {
+            display: block;
+            margin: 0 auto;
+            border-radius: 4px;
+            background: rgba(52, 152, 219, 0.05);
+        }
+        
+        .seasonal-info {
+            background: rgba(142, 68, 173, 0.1);
+            color: #8e44ad;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-top: 10px;
+        }
+        
+        .seasonal-info i {
+            margin-right: 5px;
+        }
+        
+        .alert-btn {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .alert-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+        
+        .notification-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            max-width: 350px;
+        }
+        
+        .notification {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            animation: slideIn 0.3s ease;
+        }
+        
+        .notification.high {
+            border-left-color: #e74c3c;
+        }
+        
+        .notification.medium {
+            border-left-color: #f39c12;
+        }
+        
+        .notification-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .notification-time {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+        
+        .notification-close {
+            background: none;
+            border: none;
+            color: #95a5a6;
+            cursor: pointer;
+            padding: 0;
+            font-size: 1.2rem;
+        }
+        
+        .notification-close:hover {
+            color: #e74c3c;
+        }
+        
+        .notification-message {
+            font-weight: 500;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        
+        .notification-details {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        
+        .modal {
+            background: white;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #95a5a6;
+            cursor: pointer;
+        }
+        
+        .modal-body {
+            padding: 20px;
+        }
+        
+        .setting-item {
+            margin-bottom: 15px;
+        }
+        
+        .setting-item label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        
+        .setting-item input[type="number"] {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+        }
+        
+        .setting-item input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            padding: 20px;
+            border-top: 1px solid #e9ecef;
+        }
+        
+        .btn-primary {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-primary:hover {
+            background: #2980b9;
+        }
+        
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        
+        .btn-secondary:hover {
+            background: #7f8c8d;
+        }
+        
+        .product-card.high {
+            border-left: 4px solid #e74c3c;
+        }
+        
+        .product-card.medium {
+            border-left: 4px solid #f39c12;
+        }
+        
+        .product-card.low {
+            border-left: 4px solid #27ae60;
+        }
+        
         .no-results {
             text-align: center;
             padding: 60px 20px;
@@ -289,26 +640,229 @@
             font-size: 0.9rem;
         }
         
-        @media (max-width: 768px) {
+        /* Quebec mobile-first responsive design */
+        @media (max-width: 480px) {
+            body {
+                padding: 8px;
+            }
+            
+            .container {
+                border-radius: 8px;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
             .header h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 8px;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .controls {
+                padding: 20px 15px;
             }
             
             .search-container {
                 flex-direction: column;
+                gap: 15px;
+            }
+            
+            .refresh-btn {
+                padding: 20px;
+                font-size: 1.2rem;
+                width: 100%;
+                justify-content: center;
             }
             
             .store-filters {
+                flex-direction: column;
+                gap: 12px;
+            }
+            
+            .store-checkbox {
+                padding: 18px 20px;
+                justify-content: center;
+                border: 2px solid #e9ecef;
+                font-size: 1.1rem;
+                font-weight: 500;
+            }
+            
+            .results {
+                padding: 15px;
+            }
+            
+            .product-card {
+                margin-bottom: 15px;
+            }
+            
+            .product-header {
+                padding: 15px;
+            }
+            
+            .product-name {
+                font-size: 1.2rem;
+                line-height: 1.3;
+            }
+            
+            .price-comparison {
+                padding: 15px;
+            }
+            
+            .price-row {
+                padding: 15px 0;
+                align-items: flex-start;
+                flex-direction: row;
+            }
+            
+            .store-logo {
+                width: 48px;
+                height: 48px;
+                font-size: 0.9rem;
+            }
+            
+            .price {
+                font-size: 1.4rem;
+            }
+            
+            .price.best-price {
+                font-size: 1.6rem;
+            }
+            
+            .stats {
+                padding: 20px 15px;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            
+            .stat-item {
+                text-align: center;
+            }
+            
+            .stat-value {
+                font-size: 1.3rem;
+            }
+        }
+        
+        @media (min-width: 481px) and (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .search-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .refresh-btn {
+                align-self: center;
+                min-width: 200px;
+            }
+            
+            .store-filters {
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .store-checkbox {
+                flex: 0 1 auto;
+                min-width: 120px;
                 justify-content: center;
             }
             
             .stats {
                 justify-content: center;
+                gap: 30px;
             }
             
             .stat-item {
                 flex: 1;
-                min-width: 100px;
+                min-width: 120px;
+                max-width: 150px;
+            }
+        }
+        
+        /* Quebec French text optimization */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px; /* Prevent zoom on iOS */
+            }
+            
+            /* Better French text rendering on mobile */
+            .product-name,
+            .header h1,
+            .header p {
+                word-wrap: break-word;
+                hyphens: auto;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+            }
+        }
+        
+        /* Mobile swipe and touch enhancements */
+        .product-card {
+            position: relative;
+            transition: transform 0.2s ease;
+        }
+        
+        .product-card:active {
+            transform: scale(0.98);
+        }
+        
+        /* Pull-to-refresh visual feedback */
+        .pull-to-refresh {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .pull-to-refresh.visible {
+            opacity: 1;
+            top: -40px;
+        }
+        
+        /* Mobile loading optimization */
+        .loading {
+            padding: 30px;
+        }
+        
+        .loading i {
+            font-size: 2.5rem;
+        }
+        
+        /* Quebec mobile accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        /* High contrast mode for Quebec accessibility standards */
+        @media (prefers-contrast: high) {
+            .container {
+                border: 2px solid #000;
+            }
+            
+            .product-card {
+                border: 2px solid #666;
+            }
+            
+            .store-checkbox {
+                border: 2px solid #333;
             }
         }
     </style>
@@ -320,14 +874,23 @@
             <p>Trouvez les meilleurs prix d'épicerie à Québec</p>
         </div>
         
+        <div id="notificationContainer" class="notification-container"></div>
+        
         <div class="controls">
+            <div class="pull-to-refresh" id="pullToRefresh">
+                <i class="fas fa-sync-alt"></i> Relâchez pour actualiser
+            </div>
             <div class="search-container">
                 <div class="search-box">
-                    <input type="text" id="searchInput" placeholder="Rechercher un produit... (ex: lait, pain, pommes)">
+                    <input type="text" id="searchInput" placeholder="Rechercher un produit... (ex: lait, pain, pommes)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" inputmode="search">
                 </div>
                 <button class="refresh-btn" onclick="refreshData()">
                     <i class="fas fa-sync-alt"></i>
                     Actualiser
+                </button>
+                <button class="alert-btn" id="alertSettingsBtn">
+                    <i class="fas fa-bell"></i>
+                    Alertes
                 </button>
             </div>
             
