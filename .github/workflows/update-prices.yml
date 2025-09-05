@@ -1,0 +1,70 @@
+name: Update Grocery Prices
+
+on:
+  schedule:
+    # Run twice daily at 8 AM and 8 PM EST
+    - cron: '0 13 * * *'  # 8 AM EST (13:00 UTC)
+    - cron: '0 1 * * *'   # 8 PM EST (01:00 UTC next day)
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-prices:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 lxml
+        
+    - name: Run price scraper
+      run: |
+        cd scripts
+        python scraper.py
+        
+    - name: Check for changes
+      id: git-check
+      run: |
+        if git diff --quiet data/products.json; then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Commit and push changes
+      if: steps.git-check.outputs.changed == 'true'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/products.json
+        git commit -m "🤖 Update grocery prices - $(date +'%Y-%m-%d %H:%M')"
+        git push
+        
+    - name: No changes detected
+      if: steps.git-check.outputs.changed == 'false'
+      run: echo "No price changes detected - no update needed"
+      
+    - name: Create summary
+      run: |
+        echo "## 🛒 Price Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "**Date:** $(date +'%Y-%m-%d %H:%M EST')" >> $GITHUB_STEP_SUMMARY
+        echo "**Status:** $(if [ '${{ steps.git-check.outputs.changed }}' == 'true' ]; then echo '✅ Prices updated'; else echo '✅ No changes'; fi)" >> $GITHUB_STEP_SUMMARY
+        
+        if [ -f data/products.json ]; then
+          PRODUCT_COUNT=$(python -c "import json; data=json.load(open('data/products.json')); print(data['totalProducts'])")
+          echo "**Products monitored:** $PRODUCT_COUNT" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 🏪 Stores Checked:" >> $GITHUB_STEP_SUMMARY
+        echo "- Metro" >> $GITHUB_STEP_SUMMARY
+        echo "- Super C" >> $GITHUB_STEP_SUMMARY
+        echo "- IGA" >> $GITHUB_STEP_SUMMARY
