@@ -1,373 +1,75 @@
 {
-  "lastUpdated": "2024-09-05T20:00:00Z",
-  "stores": ["metro", "superc", "iga"],
-  "totalProducts": 12,
+  "lastUpdated": "2025-09-05T18:59:08.517941Z",
+  "stores": [
+    "metro",
+    "superc",
+    "iga"
+  ],
+  "totalProducts": 3,
   "products": [
     {
-      "id": "milk-2l",
       "name": "Lait 2% - 2L",
       "category": "Produits laitiers",
-      "brand": "Natrel",
-      "size": "2L",
       "prices": [
-        {
-          "store": "metro",
-          "price": 4.49,
-          "unitPrice": "2.25$/L",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
         {
           "store": "superc",
           "price": 4.29,
           "unitPrice": "2.15$/L",
           "onSale": true,
           "originalPrice": 4.49,
-          "lastUpdated": "2024-09-05"
+          "lastUpdated": "2025-09-05"
         },
         {
           "store": "iga",
           "price": 4.59,
           "unitPrice": "2.30$/L",
           "onSale": false,
-          "lastUpdated": "2024-09-05"
+          "originalPrice": null,
+          "lastUpdated": "2025-09-05"
         }
       ]
     },
     {
-      "id": "bread-wonder",
       "name": "Pain Wonder Blanc 675g",
       "category": "Boulangerie",
-      "brand": "Wonder",
-      "size": "675g",
       "prices": [
-        {
-          "store": "metro",
-          "price": 2.99,
-          "unitPrice": "0.44$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
         {
           "store": "superc",
           "price": 2.79,
           "unitPrice": "0.41$/100g",
           "onSale": false,
-          "lastUpdated": "2024-09-05"
+          "originalPrice": null,
+          "lastUpdated": "2025-09-05"
         },
         {
           "store": "iga",
           "price": 3.19,
           "unitPrice": "0.47$/100g",
           "onSale": false,
-          "lastUpdated": "2024-09-05"
+          "originalPrice": null,
+          "lastUpdated": "2025-09-05"
         }
       ]
     },
     {
-      "id": "apples-gala",
       "name": "Pommes Gala - 3lb",
       "category": "Fruits et légumes",
-      "brand": "Local",
-      "size": "3lb",
       "prices": [
-        {
-          "store": "metro",
-          "price": 3.99,
-          "unitPrice": "2.93$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
         {
           "store": "superc",
           "price": 3.49,
           "unitPrice": "2.56$/kg",
           "onSale": true,
           "originalPrice": 3.99,
-          "lastUpdated": "2024-09-05"
+          "lastUpdated": "2025-09-05"
         },
         {
           "store": "iga",
           "price": 4.19,
           "unitPrice": "3.08$/kg",
           "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "eggs-xl",
-      "name": "Œufs Extra-gros (12)",
-      "category": "Produits laitiers",
-      "brand": "Burnbrae",
-      "size": "12 œufs",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 3.79,
-          "unitPrice": "0.32$/œuf",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 3.99,
-          "unitPrice": "0.33$/œuf",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 3.59,
-          "unitPrice": "0.30$/œuf",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "butter-lactantia",
-      "name": "Beurre Lactantia 454g",
-      "category": "Produits laitiers",
-      "brand": "Lactantia",
-      "size": "454g",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 5.99,
-          "unitPrice": "1.32$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 5.79,
-          "unitPrice": "1.28$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 6.19,
-          "unitPrice": "1.36$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "chicken-whole",
-      "name": "Poulet entier - kg",
-      "category": "Viande et volaille",
-      "brand": "Éleveurs",
-      "size": "par kg",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 4.99,
-          "unitPrice": "4.99$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 4.79,
-          "unitPrice": "4.79$/kg",
-          "onSale": true,
-          "originalPrice": 5.29,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 5.29,
-          "unitPrice": "5.29$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "cheese-cheddar",
-      "name": "Fromage Cheddar fort 400g",
-      "category": "Produits laitiers",
-      "brand": "Black Diamond",
-      "size": "400g",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 6.49,
-          "unitPrice": "1.62$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 5.99,
-          "unitPrice": "1.50$/100g",
-          "onSale": true,
-          "originalPrice": 6.79,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 6.79,
-          "unitPrice": "1.70$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "bananas",
-      "name": "Bananes - kg",
-      "category": "Fruits et légumes",
-      "brand": "Équateur",
-      "size": "par kg",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 1.79,
-          "unitPrice": "1.79$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 1.59,
-          "unitPrice": "1.59$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 1.99,
-          "unitPrice": "1.99$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "pasta-barilla",
-      "name": "Pâtes Barilla Spaghetti 454g",
-      "category": "Épicerie sèche",
-      "brand": "Barilla",
-      "size": "454g",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 1.99,
-          "unitPrice": "0.44$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 1.79,
-          "unitPrice": "0.39$/100g",
-          "onSale": true,
-          "originalPrice": 1.99,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 2.19,
-          "unitPrice": "0.48$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "yogurt-danone",
-      "name": "Yogourt Danone Vanilla 650g",
-      "category": "Produits laitiers",
-      "brand": "Danone",
-      "size": "650g",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 4.29,
-          "unitPrice": "0.66$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 3.99,
-          "unitPrice": "0.61$/100g",
-          "onSale": true,
-          "originalPrice": 4.49,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 4.49,
-          "unitPrice": "0.69$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "cereal-cheerios",
-      "name": "Céréales Cheerios 292g",
-      "category": "Épicerie sèche",
-      "brand": "General Mills",
-      "size": "292g",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 5.49,
-          "unitPrice": "1.88$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 4.99,
-          "unitPrice": "1.71$/100g",
-          "onSale": true,
-          "originalPrice": 5.49,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 5.79,
-          "unitPrice": "1.98$/100g",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        }
-      ]
-    },
-    {
-      "id": "ground-beef",
-      "name": "Bœuf haché mi-maigre - kg",
-      "category": "Viande et volaille",
-      "brand": "Local",
-      "size": "par kg",
-      "prices": [
-        {
-          "store": "metro",
-          "price": 7.99,
-          "unitPrice": "7.99$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "superc",
-          "price": 7.49,
-          "unitPrice": "7.49$/kg",
-          "onSale": true,
-          "originalPrice": 8.29,
-          "lastUpdated": "2024-09-05"
-        },
-        {
-          "store": "iga",
-          "price": 8.29,
-          "unitPrice": "8.29$/kg",
-          "onSale": false,
-          "lastUpdated": "2024-09-05"
+          "originalPrice": null,
+          "lastUpdated": "2025-09-05"
         }
       ]
     }
@@ -375,21 +77,21 @@
   "metadata": {
     "scrapingStatus": {
       "metro": {
-        "lastAttempt": "2024-09-05T20:00:00Z",
+        "lastAttempt": "2025-09-05T18:59:08.517980Z",
         "success": true,
-        "productsFound": 12
+        "productsFound": 0
       },
       "superc": {
-        "lastAttempt": "2024-09-05T19:45:00Z",
+        "lastAttempt": "2025-09-05T18:59:08.517984Z",
         "success": true,
-        "productsFound": 12
+        "productsFound": 3
       },
       "iga": {
-        "lastAttempt": "2024-09-05T19:30:00Z",
+        "lastAttempt": "2025-09-05T18:59:08.517986Z",
         "success": true,
-        "productsFound": 12
+        "productsFound": 3
       }
     },
-    "nextUpdate": "2024-09-06T08:00:00Z"
+    "nextUpdate": "2025-09-06T08:00:00.517989Z"
   }
 }
